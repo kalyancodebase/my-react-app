@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Await, Link } from "react-router-dom";
 import axios from "axios";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,12 +19,6 @@ const Login = () => {
     }
   };
 
-  const googleSuccess = () => {
-
-  }
-  const googleFailure = () => {
-
-  }
 
   return (
     <div>
@@ -46,18 +39,6 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="Submit">Login</button>
-        <br />
-        <GoogleOAuthProvider
-          clientId=""
-          render={(renderProps) => (
-            <button type="button" onClick={renderProps.onClick}>
-              Google Sign In
-            </button>
-          )}
-          onSuccess={googleSuccess}
-          onFailure={googleFailure}
-          cookiePolicy="single_hot_orgin"
-        />
         <br />
         <a>
           <Link to="/register">Register</Link>
